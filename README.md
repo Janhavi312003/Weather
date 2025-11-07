@@ -1,16 +1,43 @@
-# React + Vite
+# ☀️ Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive weather application that provides real-time weather information, 5-day forecasts, and hourly predictions for any city worldwide.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Real-time Weather Data** - Current temperature, humidity, wind speed, pressure, and UV index
+- **City Search** - Search for weather information by city name
+- **Current Location** - Get weather for your current location with one click
+- **5-Day Forecast** - View weather predictions for the next 5 days
+- **Hourly Forecast** - Detailed hourly weather information
+- **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
+- **Live Clock** - Real-time clock display
+- **Sunrise/Sunset Times** - View sunrise and sunset timings
 
-## React Compiler
+## 🛠️ Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** - Frontend framework
+- **Vite** - Build tool and development server
+- **Tailwind CSS** - Styling and responsive design
+- **Axios** - HTTP requests
+- **OpenWeather API** - Weather data source
+- **React Toastify** - Toast notifications
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository:
+git clone https://github.com/yourusername/weather-app.git
+cd weather-app
+
+
+2. Install dependencies:
+npm install
+
+
+3. Create a `.env` file in the root directory:
+VITE_WEATHER_API_KEY=your_openweather_api_key_here
+
+
+4. Get your free API key from [OpenWeather API](https://openweathermap.org/api)
+
+5. Start the development server:
+npm run dev
