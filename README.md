@@ -26,7 +26,7 @@ A modern, responsive weather application that provides real-time weather informa
 
 1. Clone the repository:
 
-   git clone https://github.com/yourusername/weather-app.git
+   git clone https://github.com/Janhavi312003/Weather
 
    cd weather-app
 
