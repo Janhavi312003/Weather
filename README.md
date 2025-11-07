@@ -26,22 +26,23 @@ A modern, responsive weather application that provides real-time weather informa
 
 1. Clone the repository:
 
-git clone https://github.com/yourusername/weather-app.git
-cd weather-app
+   git clone https://github.com/yourusername/weather-app.git
+
+   cd weather-app
 
 
 2. Install dependencies:
 
-npm install
+   npm install
 
 
 3. Create a `.env` file in the root directory:
 
-VITE_WEATHER_API_KEY=your_openweather_api_key_here
+   VITE_WEATHER_API_KEY=your_openweather_api_key_here
 
 
 4. Get your free API key from [OpenWeather API](https://openweathermap.org/api)
 
 5. Start the development server:
 
-npm run dev
+   npm run dev
