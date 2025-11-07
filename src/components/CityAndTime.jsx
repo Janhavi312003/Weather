@@ -12,11 +12,14 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios"
 
+
 const CityAndTime = ({cityName, lat, lon, setLat, setLon}) => {
 
   const [weatherData, setWeatherData] = useState(null)
   const [forecastData, setForecastData] = useState(null)
   const [uvIndex, setUvIndex] = useState(null)
+
+  const API_KEY = import.meta.env.VITE_WEATHER_API_KEY
 
   const fetchData = async () => {
     try {
@@ -24,10 +27,10 @@ const CityAndTime = ({cityName, lat, lon, setLat, setLon}) => {
       let url;
 
       if(encodedCity && cityName){
-        url = `https://api.openweathermap.org/data/2.5/weather?q=${encodedCity}&units=metric&appid=cc03e917de5ebc50c0372cb8db60d48e`
+        url = `https://api.openweathermap.org/data/2.5/weather?q=${encodedCity}&units=metric&appid=${API_KEY}`
       }
       else if(lat && lon) {
-        url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=cc03e917de5ebc50c0372cb8db60d48e`
+        url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`
       } else {
         toast.error("No city name or coordinates")
         return;
@@ -41,11 +44,11 @@ const CityAndTime = ({cityName, lat, lon, setLat, setLon}) => {
       setLon(coord.lon)
 
       // Fixed typo: coord.lat instead of coord,lat and coord.lon instead of coord.log
-      const forecast = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${coord.lat}&lon=${coord.lon}&units=metric&appid=cc03e917de5ebc50c0372cb8db60d48e`)
+      const forecast = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${coord.lat}&lon=${coord.lon}&units=metric&appid=${API_KEY}`)
       setForecastData(forecast.data)
 
       // Fixed UV API endpoint - using correct OpenWeather UV API
-      const uv = await axios.get(`https://api.openweathermap.org/data/2.5/uvi?lat=${coord.lat}&lon=${coord.lon}&appid=cc03e917de5ebc50c0372cb8db60d48e`)
+      const uv = await axios.get(`https://api.openweathermap.org/data/2.5/uvi?lat=${coord.lat}&lon=${coord.lon}&appid=${API_KEY}`)
       setUvIndex(uv.data.value)
 
     } catch (error) {
